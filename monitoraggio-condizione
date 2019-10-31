@@ -1,0 +1,43 @@
+int green = 13;
+int yellow = 12;
+int red = 11;
+
+int temp = A0;
+
+void setup()
+{
+  Serial.begin(9600);
+  
+  pinMode(green, OUTPUT);
+  pinMode(yellow, OUTPUT);
+  pinMode(red, OUTPUT);
+  
+
+}
+
+void loop()
+{
+  
+  int t = analogRead(temp);
+  Serial.println(t);
+  
+  if (t < 100){
+  
+    digitalWrite(green, HIGH);
+  	delay(500); // Wait for 1000 millisecond(s)
+  	digitalWrite(green, LOW);
+  
+  } else if (t < 200) {  
+    
+  digitalWrite(yellow, HIGH);
+  delay(500); // Wait for 1000 millisecond(s)
+  digitalWrite(yellow, LOW);
+  
+  } else {  
+    
+  digitalWrite(red, HIGH);
+  delay(3000); // Wait for 1000 millisecond(s)
+  digitalWrite(red, LOW);
+    
+  }
+}
